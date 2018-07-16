@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+    </head>
+
+    <body>
+        <script type="text/javascript">
+
+            function jsCallNative(message){
+                android.toastMessage(message);
+            }
+
+            function nativeCallJs(message){
+                console.log(message);
+                document.getElementById("message").innerHTML= ("Native调用JS输出的消息："+message);
+            }
+
+            function nativeCallJsWithReturnValue(message){
+                return "With return value " + message;
+            }
+        </script>
+
+        <h1>William - for the dream !</h1>
+
+        <input type="button" onclick="jsCallNative('JS调用Native')" value="JS调用Native"/>
+
+        <h1 id="message">Native调用JS输出的消息</h1>
+
+        <button onclick="confirm('William')">confirm</button>
+        <button onclick="alert('Dream')">alert</button>
+        <button onclick="prompt('Love')">prompt</button>
+    </body>
+
+</html>
