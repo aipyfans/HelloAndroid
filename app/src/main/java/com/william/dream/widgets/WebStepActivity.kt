@@ -1,8 +1,10 @@
 package com.william.dream.widgets
 
+import android.os.Build
 import android.os.Bundle
 import android.os.Handler
 import android.support.v7.app.AppCompatActivity
+import android.util.Log
 import android.view.View
 import com.william.dream.R
 import kotlinx.android.synthetic.main.activity_web_step.*
@@ -15,6 +17,10 @@ class WebStepActivity : AppCompatActivity(), StepCallback {
         setContentView(R.layout.activity_web_step)
     }
 
+    override fun onDestroy() {
+        super.onDestroy()
+        Log.w("onDestroy","onDestroy")
+    }
 
     override fun onStep(step: Step) {
         StepManager.end()
